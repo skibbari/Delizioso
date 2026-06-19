@@ -20,7 +20,15 @@
       <div class="logo-circle">D</div>
       <span>delizioso</span>
     </a>
-    <ul class="nav-menu">
+
+    <!-- БУРГЕР -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
       <li><a href="#">Home</a></li>
       <li><a href="#">Menu</a></li>
       <li><a href="#">About us</a></li>
@@ -191,7 +199,16 @@
 </footer>
 
 <script>
-  // Эффект для шапки: при прокрутке добавляем класс scrolled для мягкой тени
+  // Бургер-меню
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('navMenu');
+
+  burger.addEventListener('click', function() {
+    burger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Эффект для шапки при скролле
   window.addEventListener('scroll', function() {
     const header = document.getElementById('stickyHeader');
     if (window.scrollY > 10) {
